@@ -9,10 +9,10 @@ const Header = () => {
 
 
     return (
-        <header className="bg-[#7E33E0] py-3">
-            <div className="container mx-auto">
-                <div className="lg:flex lg:justify-between text-white">
-                    <div className="lg:flex lg: gap-6">
+        <header className="bg-[#7E33E0] py-3 ">
+            <div className="container mx-auto ">
+                <div className="lg:flex lg:justify-between text-white ">
+                    <div className="lg:flex lg: gap-6 " >
                         <div className="flex items-center gap-3 ">
                             <CiMail />
                             <h4> edetgdtgh@gmail.com</h4>

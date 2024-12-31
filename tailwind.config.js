@@ -8,7 +8,12 @@ export default {
     container:{
       padding:'5%'
     },
-    extend: {},
+    extend: {
+      fontFamily:{
+        'lato' : ["Lato", 'sans-serif'],
+        'josef' : ["Josefin Sans", 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }
