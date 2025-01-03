@@ -14,7 +14,7 @@ const Feature = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 3
+    slidesToScroll: 2
   };
   return (
     <section className='py-16'>

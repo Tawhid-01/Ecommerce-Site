@@ -12,6 +12,10 @@ export default {
       fontFamily:{
         'lato' : ["Lato", 'sans-serif'],
         'josef' : ["Josefin Sans", 'sans-serif']
+      },
+       backgroundImage: {
+        'hero-pattern': "url('./public/Rectangle 102.png')",
+        
       }
     },
   },
