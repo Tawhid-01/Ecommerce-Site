@@ -31,9 +31,40 @@ let priceFilterItems = data.filter((item)=> item.price > value.min && item.price
    setPriceItem(priceFilterItems)
 
   }
- 
 
   let [priceItemsShow, setPriceItemShow] = useState(false)
+
+
+let [currentPage, setCurrentPage] = useState(1);
+let [perPage, setPerPage] = useState(21);
+let lastItemIndex = currentPage * perPage;
+let firstItenIndex = lastItemIndex - perPage;
+
+ let perPageProduct = data.slice(firstItenIndex, lastItemIndex);
+
+let totalPagesNumber =Math.ceil(data.length / perPage);
+
+let pageNumber = useState([])
+
+for(let i = 1; i<= totalPagesNumber; i++){
+ pageNumber.push(i)
+}
+
+const handleNextPage = () => {
+  if(currentPage !== totalPagesNumber){
+    setCurrentPage(currentPage + 1)
+  }
+  
+}
+const handlePrevPage = () => {
+  if(currentPage > 1){
+  setCurrentPage(currentPage - 1)
+  }
+}
+const handlePage = (item) => {
+  setCurrentPage(item)
+
+}
   return (
     <>
       <section className='cursor-pointer'>
@@ -138,7 +169,7 @@ let priceFilterItems = data.filter((item)=> item.price > value.min && item.price
                 :
                 priceItems.length >0 ?  
                  priceItems.map((item) => (
-                  <div key={item.id} className="!w-[24%]  shadow-lg group pb-5">
+                  <div key={item.id} className="w-full sm:w-[32%] lg:!w-[24%]  shadow-lg group pb-5 mb-6 lh:mb-0">
                     <div className="flex justify-center relative overflow-hidden bg-[#F6F7FB] pt-5 pb-5 group-hover:border-2 border-[#c3beeb]">
                       <img className='h-[50%] w-[50%' src={item.thumbnail} alt={item.title} />
                       <button className='text-base rounded-md absolute -bottom-16 left-1/2 -translate-x-1/2 px-4 py-1 duration-700 bg-lime-600 group-hover:bottom-2'>View Details</button>
@@ -155,10 +186,10 @@ let priceFilterItems = data.filter((item)=> item.price > value.min && item.price
                   </div>
                 ))
                 :
-                filteredData.map((item) => (
-                  <div key={item.id} className="!w-[24%]  shadow-lg group pb-5">
+                perPageProduct.map((item) => (
+                  <div key={item.id} className=" w-full sm:w-[32%]  lg:!w-[24%]  shadow-lg group pb-5">
                     <div className="flex justify-center relative overflow-hidden bg-[#F6F7FB] pt-5 pb-5 group-hover:border-2 border-[#c3beeb]">
-                      <img className='h-[50%] w-[50%' src={item.thumbnail} alt={item.title} />
+                      <img className='h-[50%] w-[50%]' src={item.thumbnail} alt={item.title} />
                       <button className='text-base rounded-md absolute -bottom-16 left-1/2 -translate-x-1/2 px-4 py-1 duration-700 bg-lime-600 group-hover:bottom-2'>View Details</button>
                       <div className="flex absolute gap-4 top-2 -left-20 group-hover:left-1 duration-700">
                         <TiShoppingCart className='text-[#702bc9]' />
@@ -173,8 +204,20 @@ let priceFilterItems = data.filter((item)=> item.price > value.min && item.price
                   </div>
                 ))}
 
-
+              <div className="flex flex-col lg:flex-row px-1 py-8" >
+               <ul className='flex gap-6'>
+                <li onClick={handlePrevPage} className='py-2 px-5 border-2'>Prev</li>
+                <li onClick={handleNextPage}  className='py-2 px-5 border-2' >Next</li>
+                {pageNumber.map((item)=>(
+                  <li onClick={()=>handlePage(item)} className='py-2 px-5 border-2 '>{item}</li>
+                ))}
+                
+               </ul>
+             </div>
             </div>
+            
+
+
 
           </div>
 
