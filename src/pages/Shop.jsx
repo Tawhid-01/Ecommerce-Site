@@ -204,8 +204,8 @@ const handlePage = (item) => {
                   </div>
                 ))}
 
-              <div className="flex flex-col lg:flex-row px-1 py-8" >
-               <ul className='flex gap-6'>
+              <div className="flex flex-col lg:flex-row  py-8" >
+               <ul className='flex gap-6 flex-wrap lg:flex-nowrap'>
                 <li onClick={handlePrevPage} className='py-2 px-5 border-2'>Prev</li>
                 <li onClick={handleNextPage}  className='py-2 px-5 border-2' >Next</li>
                 {pageNumber.map((item)=>(

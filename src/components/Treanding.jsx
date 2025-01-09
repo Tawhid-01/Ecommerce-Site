@@ -9,90 +9,58 @@ import img6 from '../assets/Treanding/Trnding products list.png'
 import img7 from '../assets/Treanding/Trnding products list (1).png'
 import img8 from '../assets/Treanding/Trnding products list (2).png'
 const Treanding = () => {
-  return (
-  <section>
-    <div className="container mx-auto py-10">
-         <div className="flex justify-center pt-0 pb-10">
-                  <h2 className='font-josef font- text-[42px] shadow-lg'>Leatest Products</h2>
-                 </div>
-            
-        
-                  <div className="flex  gap-4 flex-1 justify-center">
-                  <div className="w-[24%]  bg-[#F6F7FB] group">
-                         
-                         <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img} alt="" />
-                        
-        
-        
-                         </div>
-                           
-                   </div>
-                   <div className="w-[24%]  bg-[#F6F7FB] group">
-                         
-                         <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img1} alt="" />
-                        
-        
-        
-                         </div>
-                            
-                   </div>
-                   <div className="w-[24%]  bg-[#F6F7FB] group">
-                         
-                         <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img2} alt="" />
-                        
-                          </div>
-        
-        
-                         </div>
+      return (
+            <section>
+                  <div className="container mx-auto py-10">
+                        <div className="flex justify-center pt-0 pb-10">
+                              <h2 className='font-josef font- text-[42px] shadow-lg'>Leatest Products</h2>
+                        </div>
+                        <div className="flex flex-wrap gap-4 justify-center">
+                              <div className="w-full sm:w-[48%] lg:w-[24%] bg-[#F6F7FB] group mb-4">
+                                    <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                          <img src={img} alt="" />
+                                    </div>
+                              </div>
+                              <div className="w-full sm:w-[48%] lg:w-[24%] bg-[#F6F7FB] group mb-4">
+                                    <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                          <img src={img1} alt="" />
+                                    </div>
+                              </div>
+                              <div className="w-full sm:w-[48%] lg:w-[24%] bg-[#F6F7FB] group mb-4">
+                                    <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                          <img src={img2} alt="" />
+                                    </div>
+                              </div>
+                              <div className="w-full sm:w-[48%] lg:w-[24%] bg-[#F6F7FB] group mb-4">
+                                    <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                          <img src={img3} alt="" />
+                                    </div>
+                              </div>
+                        </div>
+                        <div className="flex flex-wrap gap-4 justify-center">
 
-                         <div className="w-[24%]  bg-[#F6F7FB] group">
-                         
-                         <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img3} alt="" />
-                        
-                          </div>
-        
-        
-                         </div>
-                            
-                   </div>
-                 
-                   <div className="flex">
-                   <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img4} alt="" />
-                    
-        
-                         </div>
-                         <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img5} alt="" />
-                    
-        
-                         </div>
-                    <div className=" pt-8">
-                    <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img6} alt="" />
-                    
-        
-                         </div> <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img7} alt="" />
-                    
-        
-                         </div> <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
-                          <img src={img8} alt="" />
-                    
-        
-                         </div>
-
-                    </div>
-                   </div>
-
+                              <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                    <img src={img4} alt="" />
+                              </div>
+                              <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                    <img src={img5} alt="" />
+                              </div>
+                              <div className=" pt-8">
+                                    <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                          <img src={img6} alt="" />
+                                    </div>
+                                    <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                          <img src={img7} alt="" />
+                                    </div>
+                                    <div className="flex justify-center pt-5 pb-4 overflow-hidden relative ">
+                                          <img src={img8} alt="" />
+                                    </div>
+                              </div>
+                        </div>
                   </div>
-    
-  </section>
-  )
+            </section>
+
+      )
 }
 
 export default Treanding
