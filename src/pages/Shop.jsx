@@ -7,6 +7,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import { FaHeartbeat } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
+import { Link } from 'react-router-dom';
 const Shop = () => {
   const data = useContext(apidata)
 
@@ -190,7 +191,10 @@ const handlePage = (item) => {
                   <div key={item.id} className=" w-full sm:w-[32%]  lg:!w-[24%]  shadow-lg group pb-5">
                     <div className="flex justify-center relative overflow-hidden bg-[#F6F7FB] pt-5 pb-5 group-hover:border-2 border-[#c3beeb]">
                       <img className='h-[50%] w-[50%]' src={item.thumbnail} alt={item.title} />
-                      <button className='text-base rounded-md absolute -bottom-16 left-1/2 -translate-x-1/2 px-4 py-1 duration-700 bg-lime-600 group-hover:bottom-2'>View Details</button>
+                      <Link to={`/shop/${item.id}`}>
+                      <button className='text-base rounded-md absolute -bottom-16 left-1/2 -translate-x-1/2 px-4 py-1 duration-700 bg-lime-600 group-hover:bottom-2'>View Details
+                      </button>
+                      </Link>
                       <div className="flex absolute gap-4 top-2 -left-20 group-hover:left-1 duration-700">
                         <TiShoppingCart className='text-[#702bc9]' />
                         <FaHeartbeat className='text-[#702bc9]' />
