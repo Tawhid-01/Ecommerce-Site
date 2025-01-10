@@ -8,6 +8,10 @@ import { FaHeartbeat } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../components/Slice/cartSlice';
+
+
 const Shop = () => {
   const data = useContext(apidata)
 
@@ -66,7 +70,14 @@ const handlePage = (item) => {
   setCurrentPage(item)
 
 }
-  return (
+const dispatch = useDispatch();
+
+const handleAddTo = (item) => {
+  dispatch(addToCart({...item, qty: 1}));
+}
+
+
+ return (
     <>
       <section className='cursor-pointer'>
         < PageHeading heading="Shop Grid Default" page="Shop Grid Default" />
@@ -175,7 +186,7 @@ const handlePage = (item) => {
                       <img className='h-[50%] w-[50%' src={item.thumbnail} alt={item.title} />
                       <button className='text-base rounded-md absolute -bottom-16 left-1/2 -translate-x-1/2 px-4 py-1 duration-700 bg-lime-600 group-hover:bottom-2'>View Details</button>
                       <div className="flex absolute gap-4 top-2 -left-20 group-hover:left-1 duration-700">
-                        <TiShoppingCart className='text-[#702bc9]' />
+                        <TiShoppingCart onClick={()=>handleAddTo(item)} className='text-[#702bc9]' />
                         <FaHeartbeat className='text-[#702bc9]' />
                         <AiFillEye className='text-[#702bc9]' />
                       </div>
@@ -196,7 +207,7 @@ const handlePage = (item) => {
                       </button>
                       </Link>
                       <div className="flex absolute gap-4 top-2 -left-20 group-hover:left-1 duration-700">
-                        <TiShoppingCart className='text-[#702bc9]' />
+                        <TiShoppingCart onClick={()=>handleAddTo(item)} className='text-[#702bc9]' />
                         <FaHeartbeat className='text-[#702bc9]' />
                         <AiFillEye className='text-[#702bc9]' />
                       </div>
