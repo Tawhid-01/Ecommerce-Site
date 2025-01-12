@@ -4,6 +4,7 @@ import { IoIosCall } from "react-icons/io";
 import { FaRegUser } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { RiShoppingCartFill } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 const Header = () => {
 
 
@@ -38,7 +39,7 @@ const Header = () => {
                             </li>
                             <li className='flex items-center' >Login <FaRegUser /></li>
                             <li className='flex items-center'>Wishlist <CiHeart /> </li>
-                            <li><RiShoppingCartFill className='text-2xl' /></li>
+                            <li><Link to='/cart'><RiShoppingCartFill className='text-2xl' /></Link></li>
                         </ul>
                     </div>
                 </div>
